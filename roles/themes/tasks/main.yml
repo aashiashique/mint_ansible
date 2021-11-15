@@ -4,20 +4,9 @@
     dest: /home/{{ user }}/.themes
     remote_src: yes
 
-- name: change window border
-  command: gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Dark"
-
-- name: change gtk-theme
-  command: gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-Grey"
-
-- name: change theme
-  command: gsettings set org.cinnamon.theme name "CBlue"
-
-- name: change icon theme
+- name: Change Themes
   become_user: "{{user}}"
-  command: gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Dark-Grey"
+  script: files/apply_themes.sh
 
-- name: change cursor theme
-  command: gsettings set org.cinnamon.desktop.interface cursor-theme "DMZ-Black"
 
     
