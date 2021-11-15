@@ -11,6 +11,6 @@
 - name: disable auto maximize
   dconf:
     key: "/org/cinnamon/theme"
-    value: "['name','CBlue']"
+    value: "[('name','CBlue')]"
     state: present
     
