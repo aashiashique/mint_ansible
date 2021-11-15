@@ -5,7 +5,7 @@
     remote_src: yes
 
 - name: apply theme
-  - command: "{{ item }}"
+  - command:
     with_items:
     - gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Dark"
     - gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-Grey"
