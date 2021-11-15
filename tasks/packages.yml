@@ -4,4 +4,4 @@
       - htop
       - neofetch
       - mpv
-      
+  when: ansible_distribution in ["Ubuntu", "Debian"]
