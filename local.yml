@@ -10,3 +10,6 @@
 
   tasks:
     - include: tasks/packages.yml
+
+  roles:
+    - themes
