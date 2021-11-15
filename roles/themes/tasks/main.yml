@@ -8,5 +8,8 @@
   become_user: "{{user}}"
   script: files/apply_themes.sh
 
-
+- name: disable auto maximize
+  dconf:
+    key: "org.cinnamon.theme"
+    value: "['name', 'CBlue']"
     
