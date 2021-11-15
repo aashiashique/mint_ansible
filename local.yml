@@ -1,12 +1,12 @@
-- host: localhost
+- hosts: localhost
   connection: local
   become: true
 
-  task:
-  - name: Install packages
-    apt:
-      name: 
-        - htop
-        - neofetch
-        - mpv
-      
+  pre_tasks:
+    - name: update repository
+      apt:
+        update_cache: yes
+      changed_when: false
+
+  tasks:
+    - include: tasks/packages.yml
