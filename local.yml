@@ -3,6 +3,10 @@
   become: true
 
   task:
-  - name: Install htop
+  - name: Install packages
     apt:
-      name: htop
+      name: 
+        - htop
+        - neofetch
+        - mpv
+      
