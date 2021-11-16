@@ -13,4 +13,9 @@
   copy:
     src: files/apply_themes.sh
     dest: /home/{{user}}/apply_themes.sh
+    mode: 0644
+
+- name: apply theme
+  become_user: "{{user}}"
+  command: ./home/{{user}}/apply_themes.sh
     
