@@ -13,5 +13,5 @@
 
 - name: Run a script with arguments (free form)
   become_user: "{{user}}"
-  script: /home/mint/apply_themes.sh
+  script: /home/{{user}}/apply_themes.sh
     
