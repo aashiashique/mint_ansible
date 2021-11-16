@@ -1,0 +1,13 @@
+- name: download Download and upload speed
+  become_user: "{{user}}"
+  unarchive:
+    src: "{{ du_speed_url }}"
+    dest: /home/{{ user }}/.local/share/cinnamon/applets
+    remote_src: yes
+
+- name: copy calendar config
+  become_user: "{{user}}"
+  copy:
+    src: files/28.json
+    dest: /home/{{user}}/.cinnamon/configs/calendar@cinnamon.org/28.json
+    mode: 0664
