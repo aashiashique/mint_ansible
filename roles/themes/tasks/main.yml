@@ -13,4 +13,10 @@
     key: "/org/cinnamon/theme"
     value: "[('name','CBlue')]"
     state: present
+
+- name: Set monitor refresh rate
+  become_user: "{{user}}"
+  copy:
+    src: files/apply_themes.sh
+    dest: /home/{{user}}/apply_themes.sh
     
