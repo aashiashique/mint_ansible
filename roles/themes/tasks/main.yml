@@ -4,14 +4,18 @@
     dest: /home/{{ user }}/.themes
     remote_src: yes
 
-- name: copy script
-  become_user: "{{user}}"
-  copy:
-    src: files/apply_themes.sh
-    dest: /home/{{user}}/apply_themes.sh
-    mode: 0644
-
 - name: change theme
-  become_user: "{{user}}"
   command: gsettings set org.cinnamon.theme name "CBlue"
+
+- name: change window border
+  command: gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Dark"
+
+- name: change gtk-theme
+  command: gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-Grey"
+
+- name: change icon theme
+  command: gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Dark-Grey"
+
+- name: change cursor theme
+  command: gsettings set org.cinnamon.desktop.interface cursor-theme "DMZ-Black"
     
