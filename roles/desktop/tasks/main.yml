@@ -12,7 +12,6 @@
 
 - name: vertical and horizontal space
   become_user: "{{user}}"
-  - command: "{{item}}"
-    with_items:
-      - "gsettings set org.nemo.desktop horizontal-grid-adjust 2.0"
-      - "gsettings set org.nemo.desktop vertical-grid-adjust 2.0"
+  shell: | 
+    gsettings set org.nemo.desktop horizontal-grid-adjust 2.0
+    gsettings set org.nemo.desktop vertical-grid-adjust 2.0
