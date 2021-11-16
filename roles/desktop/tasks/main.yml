@@ -1,17 +1,22 @@
-- name: hide network icon
+- name : show desktop icons
   become_user: "{{user}}"
-  command: gsettings set org.nemo.desktop network-icon-visible false
+  command: gsettings set org.nemo.desktop show-desktop-icons true
 
-- name: enable desktop grid
-  become_user: "{{user}}"
-  command: gsettings set org.nemo.desktop use-desktop-grid true
-
-- name: show computer icon
-  become_user: "{{user}}"
-  command: gsettings set org.nemo.desktop computer-icon-visible false
-
-- name: vertical and horizontal space
+- name: desktop icons
   become_user: "{{user}}"
   shell: | 
+    gsettings set org.nemo.desktop computer-icon-visible true
+    gsettings set org.nemo.desktop network-icon-visible false
+    gsettings set org.nemo.desktop volumes-visible true
+    gsettings set org.nemo.desktop home-icon-visible true
+    gsettings set org.nemo.desktop show-orphaned-desktop-icons true
+    gsettings set org.nemo.desktop trash-icon-visible false
+
+- name: change grid settings
+  become_user: "{{user}}"
+  shell: | 
+    gsettings set org.nemo.desktop use-desktop-grid true
     gsettings set org.nemo.desktop horizontal-grid-adjust 2.0
     gsettings set org.nemo.desktop vertical-grid-adjust 2.0
+    gsettings set org.nemo.desktop text-ellipsis-limit 2
+    gsettings set org.nemo.desktop desktop-layout 'true::false'
