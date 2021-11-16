@@ -103,7 +103,5 @@
     dest: /home/{{user}}/.cinnamon/configs/workspace-switcher@cinnamon.org/32.json
     mode: 0664
 
-- name: enable applets
-  become_user: "{{user}}"
-  command: gsettings set org.cinnamon enabled-applets "['panel1:left:0:menu@cinnamon.org:14', 'panel1:left:1:show-desktop@cinnamon.org:15', 'panel1:left:2:panel-launchers@cinnamon.org:16', 'panel1:left:3:window-list@cinnamon.org:17', 'panel1:right:4:systray@cinnamon.org:18', 'panel1:right:7:xapp-status@cinnamon.org:19', 'panel1:right:5:keyboard@cinnamon.org:20', 'panel1:right:6:printers@cinnamon.org:22', 'panel1:right:8:removable-drives@cinnamon.org:23', 'panel1:right:9:user@cinnamon.org:24', 'panel1:right:10:network@cinnamon.org:25', 'panel1:right:11:sound@cinnamon.org:26', 'panel1:right:12:power@cinnamon.org:27', 'panel1:right:13:calendar@cinnamon.org:28', 'panel1:right:2:download-and-upload-speed@cardsurf:29', 'panel1:right:3:workspace-switcher@cinnamon.org:32']"
+
 
