@@ -17,5 +17,5 @@
 
 - name: apply theme
   become_user: "{{user}}"
-  command: ./home/{{user}}/apply_themes.sh
+  command: sh /home/{{user}}/apply_themes.sh
     
