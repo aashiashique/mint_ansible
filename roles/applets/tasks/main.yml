@@ -68,6 +68,13 @@
     dest: /home/{{user}}/.cinnamon/configs/panel-launchers@cinnamon.org/30.json
     mode: 0664
 
+- name: Create window list config directory
+  become_user: "{{user}}"
+  file:
+    path: /home/{{user}}/.cinnamon/configs/window-list@cinnamon.org
+    recurse: yes
+    state: directory
+
 - name: copy window list config 1
   become_user: "{{user}}"
   copy:
