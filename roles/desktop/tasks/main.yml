@@ -20,3 +20,16 @@
     gsettings set org.nemo.desktop vertical-grid-adjust 2.0
     gsettings set org.nemo.desktop text-ellipsis-limit 2
     gsettings set org.nemo.desktop desktop-layout 'true::false'
+
+- name: change desktop icon size to samll
+  # desktop icon size is store in /home/user/.config/nemo/desktop-metadata
+  # line : nemo-icon-view-zoom-level=2
+  # 1. Smaller 2. Small 3. Normal 4. Large 5. Larger
+  become_user: "{{user}}"
+  lineinfile:
+    path: /home/ashique/.config/nemo/desktop-metadata
+    # The String to Search
+    regexp: "nemo-icon-view-zoom-level="
+    # The String to Replace
+    line: "nemo-icon-view-zoom-level=2"
+    state: present
