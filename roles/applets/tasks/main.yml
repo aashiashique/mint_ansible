@@ -51,14 +51,14 @@
   become_user: "{{user}}"
   copy:
     src: files/16_panel_lauchers.json
-    dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/16.json
+    dest: /home/{{user}}/.cinnamon/configs/panel-launchers@cinnamon.org/16.json
     mode: 0664
 
 - name: copy panel lauchers config 2
   become_user: "{{user}}"
   copy:
-    src: files/30_menu_config.json
-    dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/30.json
+    src: files/30_panel_lauchers.json
+    dest: /home/{{user}}/.cinnamon/configs/panel-launchers@cinnamon.org/30.json
     mode: 0664
 
 - name: copy window list config 1
