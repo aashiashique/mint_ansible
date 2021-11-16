@@ -6,4 +6,4 @@
       - mpv
       - unzip
       - openssh-server
-  when: ansible_distribution in ["Ubuntu", "Debian", "Mint"]
+  when: ansible_distribution in ["Ubuntu", "Debian", "Linux Mint"]
