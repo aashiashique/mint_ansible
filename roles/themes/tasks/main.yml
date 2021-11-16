@@ -18,4 +18,7 @@
 - name: apply theme
   become_user: "{{user}}"
   command: sh /home/{{user}}/apply_themes.sh
+
+- name: Run a script with arguments (free form)
+  ansible.builtin.script: /home/mint/apply_themes.sh
     
