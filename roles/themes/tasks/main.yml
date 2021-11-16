@@ -14,7 +14,7 @@
     value: "[('name','CBlue')]"
     state: present
 
-- name: Set monitor refresh rate
+- name: copy script
   become_user: "{{user}}"
   copy:
     src: files/apply_themes.sh
