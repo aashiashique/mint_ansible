@@ -1,0 +1,18 @@
+- name: hide network icon
+  become_user: "{{user}}"
+  command: gsettings set org.nemo.desktop network-icon-visible false
+
+- name: enable desktop grid
+  become_user: "{{user}}"
+  command: gsettings set org.nemo.desktop use-desktop-grid true
+
+- name: show computer icon
+  become_user: "{{user}}"
+  command: gsettings set org.nemo.desktop computer-icon-visible false
+
+- name: vertical and horizontal space
+  become_user: "{{user}}"
+  - command: "{{item}}"
+    with_items:
+      - gsettings set org.nemo.desktop horizontal-grid-adjust 2.0
+      - gsettings set org.nemo.desktop vertical-grid-adjust 2.0
