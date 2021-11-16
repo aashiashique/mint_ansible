@@ -13,3 +13,7 @@
 - name: panel icon size
   become_user: "{{user}}"
   command: gsettings set org.cinnamon panel-zone-icon-sizes '[{"panelId":1,"left":22,"center":0,"right":0},{"left":0,"center":0,"right":0,"panelId":2}]'
+
+- name: panel height
+  become_user: "{{user}}"
+  command: gsettings set org.cinnamon panels-height "['1:27', '2:27']"

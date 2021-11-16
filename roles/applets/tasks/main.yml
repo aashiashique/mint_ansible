@@ -103,5 +103,18 @@
     dest: /home/{{user}}/.cinnamon/configs/workspace-switcher@cinnamon.org/32.json
     mode: 0664
 
+- name: Create download-and-upload-speed config directory
+  become_user: "{{user}}"
+  file:
+    path: /home/{{user}}/.cinnamon/configs/download-and-upload-speed@cardsurf
+    recurse: yes
+    state: directory
+
+- name: copy download-and-upload-speed config
+  become_user: "{{user}}"
+  copy:
+    src: files/download-and-upload-speed@cardsurf.json
+    dest: /home/{{user}}/.cinnamon/configs/download-and-upload-speed@cardsurf/download-and-upload-speed@cardsurf.json
+    mode: 0664
 
 
