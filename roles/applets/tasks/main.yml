@@ -1,4 +1,4 @@
-- name: download Download and upload speed
+- name: download Download And Upload applet
   become_user: "{{user}}"
   unarchive:
     src: "{{ du_speed_url }}"
@@ -11,3 +11,68 @@
     src: files/28.json
     dest: /home/{{user}}/.cinnamon/configs/calendar@cinnamon.org/28.json
     mode: 0664
+
+- name: copy menu config
+  become_user: "{{user}}"
+  copy:
+    src: files/14_menu_config.json
+    dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/14.json
+    mode: 0664
+
+- name: copy custom desktop for panel laucher 1
+  become_user: "{{user}}"
+  copy:
+    src: files/panel-launchers/cinnamon-custom-launcher-1.desktop
+    dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-1.desktop
+    mode: 0664
+
+- name: copy custom desktop for panel laucher 2
+  become_user: "{{user}}"
+  copy:
+    src: files/panel-launchers/cinnamon-custom-launcher-2.desktop
+    dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-2.desktop
+    mode: 0664
+
+- name: copy custom desktop for panel laucher 3
+  become_user: "{{user}}"
+  copy:
+    src: files/panel-launchers/cinnamon-custom-launcher-3.desktop
+    dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-3.desktop
+    mode: 0664    
+
+- name: copy panel launchers config 1
+  become_user: "{{user}}"
+  copy:
+    src: files/16_panel_lauchers.json
+    dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/16.json
+    mode: 0664
+
+- name: copy panel lauchers config 2
+  become_user: "{{user}}"
+  copy:
+    src: files/30_menu_config.json
+    dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/30.json
+    mode: 0664
+
+- name: copy window list config 1
+  become_user: "{{user}}"
+  copy:
+    src: files/17_window_list.json
+    dest: /home/{{user}}/.cinnamon/configs/window-list@cinnamon.org/17.json
+    mode: 0664
+
+- name: copy window list config 2
+  become_user: "{{user}}"
+  copy:
+    src: files/31_window_list.json
+    dest: /home/{{user}}/.cinnamon/configs/window-list@cinnamon.org/31.json
+    mode: 0664
+
+- name: copy workspace switcher config
+  become_user: "{{user}}"
+  copy:
+    src: files/32_workspace_switcher.json
+    dest: /home/{{user}}/.cinnamon/configs/workspace-switcher@cinnamon.org/32.json
+    mode: 0664
+
+
