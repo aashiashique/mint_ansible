@@ -89,6 +89,13 @@
     dest: /home/{{user}}/.cinnamon/configs/window-list@cinnamon.org/31.json
     mode: 0664
 
+- name: Create workspace switcher config directory
+  become_user: "{{user}}"
+  file:
+    path: /home/{{user}}/.cinnamon/configs/workspace-switcher@cinnamon.org
+    recurse: yes
+    state: directory
+
 - name: copy workspace switcher config
   become_user: "{{user}}"
   copy:
