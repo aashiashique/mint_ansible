@@ -19,6 +19,13 @@
     dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/14.json
     mode: 0664
 
+- name: Create panel-launchers directory
+  become_user: "{{user}}"
+  file:
+    path: /home/{{user}}/.cinnamon/panel-launchers
+    recurse: yes
+    state: directory
+
 - name: copy custom desktop for panel laucher 1
   become_user: "{{user}}"
   copy:
