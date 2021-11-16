@@ -4,10 +4,6 @@
     dest: /home/{{ user }}/.themes
     remote_src: yes
 
-- name: Change Themes
-  become_user: "{{user}}"
-  script: files/apply_themes.sh
-
 - name: copy script
   become_user: "{{user}}"
   copy:
@@ -15,10 +11,7 @@
     dest: /home/{{user}}/apply_themes.sh
     mode: 0644
 
-- name: apply theme
-  become_user: "{{user}}"
-  command: sh /home/{{user}}/apply_themes.sh
-
 - name: Run a script with arguments (free form)
+  become_user: "{{user}}"
   script: /home/mint/apply_themes.sh
     
