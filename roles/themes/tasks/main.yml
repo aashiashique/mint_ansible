@@ -1,6 +1,6 @@
 - name: download CBlue Theme
   unarchive:
-    src: {{theme_url}}
+    src: {{ theme_url }}
     dest: /home/{{ user }}/.themes
     remote_src: yes
 
