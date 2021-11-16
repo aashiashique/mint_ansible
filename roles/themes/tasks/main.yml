@@ -1,6 +1,6 @@
 - name: download CBlue Theme
   unarchive:
-    src: https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip
+    src: {{theme_url}}
     dest: /home/{{ user }}/.themes
     remote_src: yes
 
