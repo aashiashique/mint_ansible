@@ -11,7 +11,7 @@
     dest: /home/{{user}}/apply_themes.sh
     mode: 0644
 
-- name: Run a script with arguments (free form)
+- name: change theme
   become_user: "{{user}}"
-  script: /home/{{user}}/apply_themes.sh
+  command: gsettings set org.cinnamon.theme name "CBlue"
     
