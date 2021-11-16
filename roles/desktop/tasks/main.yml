@@ -27,7 +27,7 @@
   # 1. Smaller 2. Small 3. Normal 4. Large 5. Larger
   become_user: "{{user}}"
   lineinfile:
-    path: /home/ashique/.config/nemo/desktop-metadata
+    path: /home/{{user}}/.config/nemo/desktop-metadata
     # The String to Search
     regexp: "nemo-icon-view-zoom-level="
     # The String to Replace
