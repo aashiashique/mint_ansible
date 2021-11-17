@@ -47,11 +47,11 @@
     content: |
       [Desktop Entry]
       Name=Lock screen
-      Exec=/home/ashique/.lock/lock_screen.sh
+      Exec=/home/{{user}}/.lock/lock_screen.sh
       Comment=Lock screen and turn off display
       Terminal=false
       Icon=system-lock-screen
-      Type=Application    
+      Type=Application
     mode: 0664
 
 # - name: copy custom desktop for panel laucher 1
