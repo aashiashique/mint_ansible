@@ -40,13 +40,13 @@
     recurse: yes
     state: directory
 
-- name: Creating a file with content
+- name: Creating a custom desktop for panel laucher 1
   become_user: "{{user}}"
   copy:
     dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-1.desktop
     content: |
       [Desktop Entry]
-      Name=Lock screen
+      Name=Lock Screen
       Exec=/home/{{user}}/.lock/lock_screen.sh
       Comment=Lock screen and turn off display
       Terminal=false
@@ -54,26 +54,33 @@
       Type=Application
     mode: 0664
 
-# - name: copy custom desktop for panel laucher 1
-#   become_user: "{{user}}"
-#   copy:
-#     src: files/panel-launchers/cinnamon-custom-launcher-1.desktop
-#     dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-1.desktop
-#     mode: 0664
-
-- name: copy custom desktop for panel laucher 2
+- name: Creating a custom desktop for panel laucher 2
   become_user: "{{user}}"
   copy:
-    src: files/panel-launchers/cinnamon-custom-launcher-2.desktop
     dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-2.desktop
+    content: |
+      [Desktop Entry]
+      Name=Lock Screen
+      Exec=/home/{{user}}/.lock/lock_screen.sh
+      Comment=Lock screen and turn off display
+      Terminal=false
+      Icon=system-lock-screen
+      Type=Application
     mode: 0664
 
-- name: copy custom desktop for panel laucher 3
+- name: Creating a custom desktop for panel laucher 3
   become_user: "{{user}}"
   copy:
-    src: files/panel-launchers/cinnamon-custom-launcher-3.desktop
     dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-3.desktop
-    mode: 0664    
+    content: |
+      [Desktop Entry]
+      Name=Firefox Private
+      Exec=firefox -private-window
+      Comment=Firefox Private Window
+      Terminal=false
+      Icon=firefox-aurora
+      Type=Application
+    mode: 0664  
 
 - name: Create config panel-launchers directory
   become_user: "{{user}}"

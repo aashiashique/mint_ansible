@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Lock screen
-Exec=/home/ashique/.lock/lock_screen.sh
-Comment=Lock screen and turn off display
-Terminal=false
-Icon=system-lock-screen
-Type=Application

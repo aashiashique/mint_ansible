@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Firefox Private
-Exec=firefox -private-window
-Comment=Firefox Private Window
-Terminal=false
-Icon=firefox-aurora
-Type=Application
