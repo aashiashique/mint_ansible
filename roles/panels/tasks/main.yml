@@ -17,3 +17,7 @@
 - name: panel height
   become_user: "{{user}}"
   command: gsettings set org.cinnamon panels-height "['1:27', '2:27']"
+
+- name: no. of workspaces
+  become_user: "{{user}}"
+  command: gsettings set org.cinnamon.desktop.wm.preferences num-workspaces 4
