@@ -1,3 +1,7 @@
+- name : hide desktop icons
+  become_user: "{{user}}"
+  command: gsettings set org.nemo.desktop show-desktop-icons false
+
 - name: copy desktop-metadata
   become_user: "{{user}}"
   copy:
@@ -7,9 +11,7 @@
 
 - name : show desktop icons
   become_user: "{{user}}"
-  shell: | 
-    gsettings set org.nemo.desktop show-desktop-icons false
-    gsettings set org.nemo.desktop show-desktop-icons true
+  command: gsettings set org.nemo.desktop show-desktop-icons true    
 
 - name: desktop icons
   become_user: "{{user}}"
