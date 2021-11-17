@@ -8,6 +8,5 @@
       - openssh-server
   when: ansible_distribution in ["Ubuntu", "Debian", "Linux Mint"]
 
-- name: Change timezone
-  become_user: "{{user}}"
+- name: Change timezone  
   command: timedatectl set-timezone "Asia/Kolkata" 

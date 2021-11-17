@@ -32,3 +32,22 @@
     gsettings set org.nemo.desktop text-ellipsis-limit 2
     gsettings set org.nemo.desktop desktop-layout 'true::false'
 
+- name: change sound effects
+  become_user: "{{user}}"
+  shell: | 
+    gsettings set org.cinnamon.sounds notification-enabled false
+    gsettings set org.cinnamon.sounds maximize-enabled false
+    gsettings set org.cinnamon.sounds map-enabled false
+    gsettings set org.cinnamon.sounds plug-enabled false
+    gsettings set org.cinnamon.sounds unplug-enabled false
+    gsettings set org.cinnamon.sounds close-enabled false
+    gsettings set org.cinnamon.sounds switch-enabled false
+    gsettings set org.cinnamon.sounds minimize-enabled false
+    gsettings set org.cinnamon.sounds login-enabled true
+    gsettings set org.cinnamon.sounds unmaximize-enabled false
+    gsettings set org.cinnamon.sounds logout-enabled true
+    gsettings set org.cinnamon.sounds tile-enabled false
+    
+    
+
+
