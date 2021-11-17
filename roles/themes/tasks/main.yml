@@ -1,3 +1,10 @@
+- name: Create theme directory
+  become_user: "{{user}}"
+  file:
+    path: /home/{{ user }}/.themes
+    recurse: yes
+    state: directory
+
 - name: download CBlue Theme
   unarchive:
     src: "{{ theme_url }}"
