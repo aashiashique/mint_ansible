@@ -19,6 +19,20 @@
     dest: /home/{{user}}/.cinnamon/configs/menu@cinnamon.org/14.json
     mode: 0664
 
+- name: Create lock directory
+  become_user: "{{user}}"
+  file:
+    path: /home/{{user}}/.lock
+    recurse: yes
+    state: directory
+
+- name: copy script. lock screen + turn off display
+  become_user: "{{user}}"
+  copy:
+    src: files/lock_screen.sh
+    dest: /home/{{user}}/.lock/lock_screen.sh
+    mode: 0764
+
 - name: Create panel-launchers directory
   become_user: "{{user}}"
   file:
@@ -26,12 +40,26 @@
     recurse: yes
     state: directory
 
-- name: copy custom desktop for panel laucher 1
+- name: Creating a file with content
   become_user: "{{user}}"
   copy:
-    src: files/panel-launchers/cinnamon-custom-launcher-1.desktop
     dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-1.desktop
+    content: |
+      [Desktop Entry]
+      Name=Lock screen
+      Exec=/home/ashique/.lock/lock_screen.sh
+      Comment=Lock screen and turn off display
+      Terminal=false
+      Icon=system-lock-screen
+      Type=Application    
     mode: 0664
+
+# - name: copy custom desktop for panel laucher 1
+#   become_user: "{{user}}"
+#   copy:
+#     src: files/panel-launchers/cinnamon-custom-launcher-1.desktop
+#     dest: /home/{{user}}/.cinnamon/panel-launchers/cinnamon-custom-launcher-1.desktop
+#     mode: 0664
 
 - name: copy custom desktop for panel laucher 2
   become_user: "{{user}}"
