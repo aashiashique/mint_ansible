@@ -1,15 +1,9 @@
-  # desktop icon size is store in /home/user/.config/nemo/desktop-metadata
-  # line : nemo-icon-view-zoom-level=2
-  # 1. Smaller 2. Small 3. Normal 4. Large 5. Larger
-- name: change desktop icon size to samll
+- name: copy desktop-metadata
   become_user: "{{user}}"
-  lineinfile:
-    path: /home/{{user}}/.config/nemo/desktop-metadata
-    # The String to Search
-    regexp: "nemo-icon-view-zoom-level="
-    # The String to Replace
-    line: "nemo-icon-view-zoom-level=2"
-    state: present
+  copy:
+    src: files/desktop-metadata
+    dest: /home/{{user}}/.config/nemo/desktop-metadata
+    mode: 0664
 
 - name : show desktop icons
   become_user: "{{user}}"
