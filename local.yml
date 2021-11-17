@@ -9,6 +9,7 @@
       apt:
         update_cache: yes
       changed_when: false
+      when: ansible_distribution in ["Ubuntu", "Debian", "Linux Mint"]
 
   tasks:
     - include: tasks/packages.yml
